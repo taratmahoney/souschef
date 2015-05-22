@@ -1,0 +1,61 @@
+c== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+--------------------------------------- souschef ---------------------------------
+DONE
+
+NEED
+* As a user, I want to choose a recipe and have it parsed for me
+  - view the submitted recipe in the app & press a button to begin the "reading"
+* As a user, each time I press right arrow key, the next step is prompted
+* As a user, each time I press left arrow key, the previous step is re-played
+* As a user, I want to set the pace at which the recipe is read to me
+* As a user, I want to be able to create an account
+* As a user, I want to be able to sign in/log out
+
+WANT
+* As a user, I want to be able to save parsed recipes to my recipe box
+* As a user, I want to be able to add the recipe ingredients to a list
+
+DREAMS
+* As a user, I want to be able to sign in/up using Facebook or Twitter
+* As a user, I want to share my parsed recipe with friends
+* As a user, I want to be able to collaborate on the list with a friend
+* As a user, I want to click on the measurement units and have them converted from  imperial or metric to metric or imperial
+
+
+Order:
+- get the voice stuff going
+- then saving the recorded files so they don't have to be created again
+- populating database later
+
+
+
+
+
