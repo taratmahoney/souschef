@@ -23,7 +23,7 @@ def populate_with_ingredient(name)
     steps.each do |step|
       Step.create!(
         recipe_id: r.id,
-        content: steps
+        content: step
       )
       print "|"
     end

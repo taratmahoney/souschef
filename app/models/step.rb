@@ -7,4 +7,6 @@ class Step < ActiveRecord::Base
   def save
     speech = Speech.new(content)
   end
+
+
 end
