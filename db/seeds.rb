@@ -1,46 +1,45 @@
-require "pry"
-require "open-uri"
-require "nokogiri"
+recipe_titles = ["Summer Berry Pavlova", "Lavender and Orange Blossom Graybeh"]
+ingredients = ["Egg", "Mango", "Cherries", "Whipped Cream", "Orange", "Cheese", "Flour", "Pepper", "Dates", "Avocado", "Durian", "Hing", "Curry"]
 
-def populate_with_ingredient(name)
-  base_url = "http://cooking.nytimes.com/search"
-  base_page = Nokogiri::HTML(open(base_url))
-  urls = base_page.css(".card-recipe-info .name a")
-      .map{|x| "http://cooking.nytimes.com" +  x.attr('href') }
-  
-  urls.each do |url|
-    #url = "http://cooking.nytimes.com/recipes/1016596-hamburgers-tavern-style"
-    page = Nokogiri::HTML(open(url))
-    
-    
-    name = page.css(".recipe-title").first.text.strip
-    description = page.css(".topnote").first.text.strip
-    steps = page.css(".recipe-steps li").map{|x| x.text}
-    ingredients = page.css(".recipe-ingredients").first.css("li").map{|x| x.text.strip }
-    
-    r = Recipe.create!(name: page.css(".recipe-title").first.text.strip)
-    
-    steps.each do |step|
-      Step.create!(
-        recipe_id: r.id,
-        content: steps
-      )
-      print "|"
-    end
-    
-    ingredients.each do |ingredient|
-       Ingredient.create!(
-          recipe_id: r.id,
-          name: ingredient
-       )
-      print "|"
-    end
+100.times do
+  recipe = Recipe.create!(
+    name: recipe_titles.sample,
+    description: "These buttery, shortbread-like cookies have a particularly crunchy texture that comes from clarified butter. If you’ve never clarified butter, this recipe is a good place to start, and the process is extremely simple (though you do have to plan it several hours ahead). If you’re not a lavender fan, feel free to leave it out. And for a more familiar flavor, substitute vanilla extract for the orange blossom water. These cookies keep well, so you can make them up to a week in advance."
+  )
+
+  7.times do
+    recipe.ingredients.create(name: ingredients.sample)
   end
-end 
 
-%w[pickles cheddar beef chicken].each do |item|
-   populate_with_ingredient(item)
+  (1..10).each do |num|
+    recipe.steps.create(content: "#{num}. Divide dough into quarters and press each into a long narrow log about 1 inch high and 1 inch wide. With a sharp knife, cut into log diagonally to make diamond-shaped cookies 1 to 2 inches long. Use a spatula to transfer cookies to sheet pans, spaced about 2 inches apart. Bake for 15 to 20 minutes, rotating pan halfway through. Cookies should be golden brown at the edges.")
+  end
 end
 
-# binding.pry
-# puts "yodo"
+
+
+
+# 5.times do
+#   Recipe.create!(
+#     name: "Lavender and Orange Blossom Graybeh",
+#     description: "These buttery, shortbread-like cookies have a particularly crunchy texture that comes from clarified butter. If you’ve never clarified butter, this recipe is a good place to start, and the process is extremely simple (though you do have to plan it several hours ahead). If you’re not a lavender fan, feel free to leave it out. And for a more familiar flavor, substitute vanilla extract for the orange blossom water. These cookies keep well, so you can make them up to a week in advance."
+#     )
+# end
+
+# 5.times do
+#   Ingredient.create! (
+#     name: "Egg",
+#     recipe_id: 1
+#     )
+
+# end
+
+
+
+# 5.times do
+#   Step.create! (
+#     content: "Divide dough into quarters and press each into a long narrow log about 1 inch high and 1 inch wide. With a sharp knife, cut into log diagonally to make diamond-shaped cookies 1 to 2 inches long. Use a spatula to transfer cookies to sheet pans, spaced about 2 inches apart. Bake for 15 to 20 minutes, rotating pan halfway through. Cookies should be golden brown at the edges.",
+#     recipe_id: 1
+#     )
+
+# end

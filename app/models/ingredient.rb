@@ -3,9 +3,9 @@ class Ingredient < ActiveRecord::Base
 
     include ESpeak
 
-  def save
-    speech = Speech.new(content)
-  end
+  # def save
+  #   speech = Speech.new(content)
+  # end
 
-  
+
 end
