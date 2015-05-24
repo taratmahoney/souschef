@@ -37,6 +37,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
   gem 'sorcery'
   gem 'bourbon'
   gem 'neat'
+  gem 'cocoon'
   gem "espeak-ruby", require: "espeak"
 
 
