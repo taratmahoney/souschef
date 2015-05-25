@@ -1,3 +1,7 @@
 <% @recipe.each do |recipe| %>
   <h4><%= recipe.name %> </h4>
 <% end %>
+
+<% if current_user %>
+  <%= link_to "Add Recipe", new_recipe_path %>
+<% end %>
