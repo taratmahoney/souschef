@@ -1,4 +1,9 @@
 <h1><%= @recipe.name %></h1>
+<img class="recipe-image" src="<%= @recipe.image %>" />
+
+<p>Cooking time:</p>
+<p><%= @recipe.time %> hours</p>
+
 <p>Ingredients: </p>
 
   <% @recipe.ingredients.each do |ingredient| %>
