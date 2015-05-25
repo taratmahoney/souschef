@@ -1,5 +1,8 @@
 <h1><%= @recipe.name %></h1>
-<img class="recipe-image" src="<%= @recipe.image %>" />
+
+<%= image_tag(@recipe.image, :size => "260x180", :crop => :fill) %>
+<!-- <img class="recipe-image" src="<%= @recipe.image %>" />
+-->
 
 <p>Cooking time:</p>
 <p><%= @recipe.time %> hours</p>
