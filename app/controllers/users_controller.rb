@@ -9,10 +9,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to (:users, notice: "You're in! Let's get started.")
+      redirect_to recipes_url, notice: "You're in! Let's get started."
       auto_login(@user)
     else
-      render "new"
+      render "new", alert: "Something went wrong! Try again."
     end
 
   end
