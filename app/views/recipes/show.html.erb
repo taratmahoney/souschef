@@ -2,6 +2,8 @@
 <p>Ingredients: </p>
 
   <% @recipe.ingredients.each do |ingredient| %>
+    <%= ingredient.number %>
+    <%= ingredient.unit %>
     <%= ingredient.name %></br>
   <% end %>
 
