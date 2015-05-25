@@ -20,3 +20,5 @@
 <% @recipe.steps.each do |step| %>
   <%= step.content %></br>
 <% end %>
+
+<%= link_to "Edit Recipe", edit_recipe_path %>
