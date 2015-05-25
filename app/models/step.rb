@@ -12,6 +12,7 @@ class Step < ActiveRecord::Base
     @speech.speak
    filename = "mary.mp3"
     @speech.save(filename)
+  end
 
 
 end
