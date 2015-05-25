@@ -1,0 +1,49 @@
+<h1>Edit Recipe</h1>
+
+<%= form_for @recipe do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :time %>
+    <%= f.text_field :time %>
+  </div>
+
+  <div>
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+
+  <h3>Ingredients</h3>
+
+  <div id="ingredients">
+    <%= f.fields_for :ingredients do |ingredients_form| %>
+      <%= render 'ingredient_fields', f: ingredients_form %>
+    <% end %>
+
+    <div class="links">
+      <%= link_to_add_association 'add ingredient', f, :ingredients %>
+    </div>
+  </div>
+
+  <h3>Steps</h3>
+
+  <div id="steps">
+    <%= f.fields_for :steps do |steps_form| %>
+      <%= render 'step_fields', f: steps_form %>
+    <% end %>
+
+    <div class="links">
+      <%= link_to_add_association 'add step', f, :steps %>
+    </div>
+  </div>
+
+      <%= f.submit %>
+<% end %>
