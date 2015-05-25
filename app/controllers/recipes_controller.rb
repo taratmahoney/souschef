@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
     if @recipe.update_attributes(recipe_params)
       redirect_to recipe_path(@recipe)
     else
-      render :edit
+      render :edit, alert: "Something went wrong. Try again:"
     end
   end
 
