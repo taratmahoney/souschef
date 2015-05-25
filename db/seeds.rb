@@ -1,10 +1,13 @@
 recipe_titles = ["Summer Berry Pavlova", "Lavender and Orange Blossom Graybeh"]
 ingredients = ["Egg", "Mango", "Cherries", "Whipped Cream", "Orange", "Cheese", "Flour", "Pepper", "Dates", "Avocado", "Durian", "Hing", "Curry"]
+images = ["https://download.unsplash.com/reserve/oMRKkMc4RSq7N91OZl0O_IMG_8309.jpg", "https://download.unsplash.com/reserve/YFdIoUsRJCAehcoUnQaS_Straw.jpg", "https://download.unsplash.com/photo-1418479631014-8cbf89db3431", "https://download.unsplash.com/photo-1423483641154-5411ec9c0ddf"]
 
 100.times do
   recipe = Recipe.create!(
     name: recipe_titles.sample,
-    description: "These buttery, shortbread-like cookies have a particularly crunchy texture that comes from clarified butter. If you’ve never clarified butter, this recipe is a good place to start, and the process is extremely simple (though you do have to plan it several hours ahead). If you’re not a lavender fan, feel free to leave it out. And for a more familiar flavor, substitute vanilla extract for the orange blossom water. These cookies keep well, so you can make them up to a week in advance."
+    description: "These buttery, shortbread-like cookies have a particularly crunchy texture that comes from clarified butter. If you’ve never clarified butter, this recipe is a good place to start, and the process is extremely simple (though you do have to plan it several hours ahead). If you’re not a lavender fan, feel free to leave it out. And for a more familiar flavor, substitute vanilla extract for the orange blossom water. These cookies keep well, so you can make them up to a week in advance.",
+    image: images.sample,
+    time: rand(10)
   )
 
   7.times do
