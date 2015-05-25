@@ -1,6 +1,7 @@
 recipe_titles = ["Summer Berry Pavlova", "Lavender and Orange Blossom Graybeh"]
 ingredients = ["Egg", "Mango", "Cherries", "Whipped Cream", "Orange", "Cheese", "Flour", "Pepper", "Dates", "Avocado", "Durian", "Hing", "Curry"]
 images = ["https://download.unsplash.com/reserve/oMRKkMc4RSq7N91OZl0O_IMG_8309.jpg", "https://download.unsplash.com/reserve/YFdIoUsRJCAehcoUnQaS_Straw.jpg", "https://download.unsplash.com/photo-1418479631014-8cbf89db3431", "https://download.unsplash.com/photo-1423483641154-5411ec9c0ddf"]
+units = ['cups', 'tablespoons', 'teaspoons']
 
 100.times do
   recipe = Recipe.create!(
@@ -11,7 +12,11 @@ images = ["https://download.unsplash.com/reserve/oMRKkMc4RSq7N91OZl0O_IMG_8309.j
   )
 
   7.times do
-    recipe.ingredients.create(name: ingredients.sample)
+    recipe.ingredients.create(
+      name: ingredients.sample,
+      unit: units.sample,
+      number: rand(10)
+      )
  end
 
   (1..10).each do |num|
