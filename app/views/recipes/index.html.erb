@@ -1,5 +1,6 @@
 <% @recipe.each do |recipe| %>
-  <h4><%= recipe.name %> </h4>
+  <h4><%= link_to recipe.name, "/recipes/#{recipe.id}" %> </h4>
+  <img class="recipe-thumb" src="<%= recipe.image %>" />
 <% end %>
 
 <% if current_user %>
