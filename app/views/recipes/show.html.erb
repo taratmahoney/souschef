@@ -1,4 +1,12 @@
 <h1><%= @recipe.name %></h1>
+
+<%= image_tag(@recipe.image, :size => "260x180", :crop => :fill) %>
+<!-- <img class="recipe-image" src="<%= @recipe.image %>" />
+-->
+
+<p>Cooking time:</p>
+<p><%= @recipe.time %> hours</p>
+
 <p>Ingredients: </p>
 
   <% @recipe.ingredients.each do |ingredient| %>
@@ -12,3 +20,5 @@
 <% @recipe.steps.each do |step| %>
   <%= step.content %></br>
 <% end %>
+
+<%= link_to "Edit Recipe", edit_recipe_path %>
