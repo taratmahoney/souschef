@@ -6,8 +6,7 @@ class Step < ActiveRecord::Base
 
 
   def talk
-
-    @speech = Speech.new(content, :speed => 100, :voice => "en-uk", :pitch => 60)
+    @speech = Speech.new(content, :speed => 100, :voice => "en-uk", :pitch => 80)
     @speech.speak
    filename = "mary.mp3"
     @speech.save(filename)

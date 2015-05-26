@@ -1,6 +1,5 @@
 class RecipesController < ApplicationController
 
-
   def index
     @recipe = Recipe.all
   end
@@ -13,6 +12,23 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
     @recipe.steps.build
     @recipe.ingredients.build
+  end
+
+  # /recipes/tts?speak=hello
+  def tts
+    text = params[:speak]
+    cmdline = [
+      "curl",
+      "http://translate.google.com/translate_tts?tl=en&q=#{text}", 
+      "-e", "http://translate.google.com/",
+      "-A", "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
+    ]
+
+    mp3 = IO.popen(cmdline, "r") do |f|
+      f.read
+    end
+
+    send_data mp3
   end
 
   def edit

@@ -39,11 +39,10 @@ ActiveRecord::Schema.define(version: 20150525022025) do
   end
 
   create_table "steps", force: :cascade do |t|
-    t.string   "mp3"
-    t.integer  "order_number"
+    t.integer  "number"
     t.integer  "recipe_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text     "content"
   end
 

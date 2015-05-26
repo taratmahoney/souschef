@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 root 'recipes#index'
   resources :user_sessions
-  resources :recipes
+  resources :recipes do
+    collection do
+      get 'tts'
+    end
+  end
   resources :users
 
   get 'login' => 'user_sessions#new', :as => :login
