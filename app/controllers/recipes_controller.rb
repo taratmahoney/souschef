@@ -16,7 +16,24 @@ class RecipesController < ApplicationController
 
   # /recipes/tts?speak=hello
   def tts
-    text = params[:speak]
+    sentences = params[:speak].split(".").map do |sentence|
+      if sentence.length > 100
+        words = sentence.split(" ")
+        left,right = words.each_slice( (words.size/2.0).round ).to_a
+        [left.join(" "), right.join(" ")]
+      else
+        sentence
+      end
+    end.flatten # to account for the arrays of split sentences if the 
+                # first condition is met
+    
+    mp3 = sentences.map{ |sentence| generate_mp3(sentence) }.join
+
+    send_data mp3
+  end
+
+  def generate_mp3(sentence)
+    text = CGI.escape(sentence)
     cmdline = [
       "curl",
       "http://translate.google.com/translate_tts?tl=en&q=#{text}", 
@@ -27,8 +44,6 @@ class RecipesController < ApplicationController
     mp3 = IO.popen(cmdline, "r") do |f|
       f.read
     end
-
-    send_data mp3
   end
 
   def edit

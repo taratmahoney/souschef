@@ -4,14 +4,30 @@ function speak(text) {
   $("#speaker").html("<audio controls autoplay><source src='"+url+"' type='audio/mpeg'></audio>")
 }
 
+String.prototype.repeat = function( num )
+{
+    return new Array( num + 1 ).join( this );
+}
+
+ // find the next step's p tag
+ // highlight current step
+
 $(function() {
   var current_step = 1;
 
   var read_current_step = function () {
-    // find the next step's p tag
-    // unhighlight all steps
-    // highlight current step
+    var step = $("#step" + current_step).text();
+    var highlight = function (){
+      $(".step-content").css("background-color", "yellow");
+    }
+    var unhighlight = function (){
+      $(".step-content").css("background-color", "transparent");
+    }
     // read the step
+    unhighlight;
+    highlight;
+    speak(step);
+    
     console.log("I'm reading a step!")
   }
 
