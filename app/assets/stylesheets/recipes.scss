@@ -1,3 +1,23 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recipe-list-item {
+  position: relative
+}
+
+.recipe-list-name {
+  position: absolute;
+  bottom: 10px;
+  background-color: rgba(121, 177, 237, 0.6);
+  display: block;
+  width: 100%;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 1.5em;
+  color: #FFFF66;
+}
+
+.recipe-list-name a{
+  color: white;
+}
