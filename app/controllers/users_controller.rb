@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
- skip_before_filter :require_login, only: [:index, :new, :create] 
+ skip_before_filter :require_login, only: [:index, :new, :create]
 
   def new
     @user = User.new
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save
       redirect_to recipes_url, notice: "You're in! Let's get started."
-      #UserMailer.welcome_email.deliver_now
+      # UserMailler.welcome_email(@user).deliver_now
       auto_login(@user)
     else
       render "new", alert: "Something went wrong! Try again."
