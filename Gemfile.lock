@@ -196,7 +196,6 @@ DEPENDENCIES
   bourbon
   byebug
   cocoon
-  coffee-rails (~> 4.1.0)
   espeak-ruby
   favorite_things
   figaro

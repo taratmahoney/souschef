@@ -20,6 +20,6 @@ units = ['cups', 'tablespoons', 'teaspoons']
  end
 
   (1..10).each do |num|
-    recipe.steps.create(content: "#{num}. Divide dough into quarters and press each into a long narrow log about 1 inch high and 1 inch wide. With a sharp knife, cut into log diagonally to make diamond-shaped cookies 1 to 2 inches long. Use a spatula to transfer cookies to sheet pans, spaced about 2 inches apart. Bake for 15 to 20 minutes, rotating pan halfway through. Cookies should be golden brown at the edges.")
+    recipe.steps.create(number: num, content: "Divide dough into quarters and press each into a long narrow log about 1 inch high and 1 inch wide. With a sharp knife, cut into log diagonally to make diamond-shaped cookies 1 to 2 inches long. Use a spatula to transfer cookies to sheet pans, spaced about 2 inches apart. Bake for 15 to 20 minutes, rotating pan halfway through. Cookies should be golden brown at the edges.")
   end
 end
