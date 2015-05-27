@@ -1,7 +1,7 @@
 recipe_titles = ["Summer Berry Pavlova", "Lavender and Orange Blossom Graybeh"]
 ingredients = ["egg", "mango", "cherries", "whipped cream", "orange", "cheese", "flour", "pepper", "dates", "avocado", "durian", "hing", "curry"]
 images = ["https://download.unsplash.com/reserve/oMRKkMc4RSq7N91OZl0O_IMG_8309.jpg", "https://download.unsplash.com/reserve/YFdIoUsRJCAehcoUnQaS_Straw.jpg", "https://download.unsplash.com/photo-1418479631014-8cbf89db3431", "https://download.unsplash.com/photo-1423483641154-5411ec9c0ddf"]
-units = ['cups', 'tablespoons', 'teaspoons']
+units = ['cup', 'tablespoon', 'teaspoon']
 
 100.times do
   recipe = Recipe.create!(

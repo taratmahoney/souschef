@@ -7,8 +7,8 @@
 <p>Cooking time:</p>
 <p><%= @recipe.time %> hours</p>
 
-<button class="prev-step"> &lt;&lt; Read prev step </button> 
-<button class="next-step"> Read next step &gt;&gt; </button> 
+<button class="prev-step"> &lt;&lt; Read prev step </button>
+<button class="next-step"> Read next step &gt;&gt; </button>
 
 </br>
 <div id="speaker"></div>
@@ -17,8 +17,7 @@
 <p>Ingredients: </p>
 
   <% @recipe.ingredients.each do |ingredient| %>
-    <%= ingredient.number %>
-    <%= ingredient.unit %>
+    <%= pluralize(ingredient.number, ingredient.unit) %>
     <%= ingredient.name %></br>
   <% end %>
 
