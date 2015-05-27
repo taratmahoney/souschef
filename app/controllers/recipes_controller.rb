@@ -36,7 +36,7 @@ class RecipesController < ApplicationController
     text = CGI.escape(sentence)
     cmdline = [
       "curl",
-      "http://translate.google.com/translate_tts?tl=en&q=#{text}", 
+      "http://translate.google.com/translate_tts?tl=en-uk&q=#{text}", 
       "-e", "http://translate.google.com/",
       "-A", "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
     ]

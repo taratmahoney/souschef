@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save
       redirect_to recipes_url, notice: "You're in! Let's get started."
-      UserMailler.welcome_email(@user).deliver_now
+      #UserMailer.welcome_email.deliver_now
       auto_login(@user)
     else
       render "new", alert: "Something went wrong! Try again."

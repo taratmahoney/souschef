@@ -37,6 +37,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.0)
+    autoprefixer-rails (5.1.11)
+      execjs
+      json
     awesome_print (1.6.1)
     bcrypt (3.1.10)
     better_errors (2.1.1)
@@ -65,7 +68,6 @@ GEM
     did_you_mean (0.9.10)
       interception
     erubis (2.7.0)
-    espeak-ruby (1.0.2)
     execjs (2.5.2)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
@@ -192,11 +194,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   better_errors
   bourbon
   byebug
   cocoon
-  espeak-ruby
   favorite_things
   figaro
   jbuilder (~> 2.0)
