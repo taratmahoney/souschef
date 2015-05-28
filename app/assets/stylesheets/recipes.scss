@@ -36,7 +36,7 @@
  }
 }
 
-.recipe-image{  
+.recipe-image-container{  
  @include media($large-screen-up){
   float: left;
   display: block;
@@ -45,6 +45,33 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: 390px;
- }
+  background-color: $blue;
+  color: white;
+  width: 45%; 
+  }
+}
+
+  .image-container-text {
+    @include media($large-screen-up){
+    padding: 2em;
+    }
+  }
+
+.recipe-image-container img{  
+ @include media($large-screen-up){
+  overflow: hidden;
+  height: 500px;
+  }
+}
+
+ .recipe {  
+ @include media($large-screen-up){
+  width: 55%;
+  float: right;
+  padding: 1em 3em;
+  }
+}
+
+.recipe {
+  padding: 1em 3em;
 }
