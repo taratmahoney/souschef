@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.recipes { 
+  @include media($medium-screen-up){
+    margin: 1em 3em;
+  }
+}
 .recipe-list-item {
   position: relative
 }
@@ -52,30 +58,42 @@
 }
 
 .image-container-text {
-  @include media($large-screen-up){
-    padding: 2em;
-  }
+    padding: 1.5em;
 }
 
 .recipe-image-container img{
  @include media($large-screen-up){
   overflow: hidden;
-  height: 500px;
   }
 }
 
- .recipe {
+ .right-pane {
  @include media($large-screen-up){
   width: 55%;
   float: right;
-  padding: 1em 3em;
   }
 }
 
 .recipe {
-  padding: 1em 3em;
+  padding: 20px 10px 100px 20px;
 }
 
 .highlight {
-  background-color: yellow;
+  background-color: $yellow;
 }
+
+.fixed-buttons{
+  position: fixed;
+  bottom: 0;
+  background: $yellow;
+  width: 100%;
+  z-index: 15;
+  padding: 1em 1em;
+}
+
+#speaker {
+  padding: 10px;
+}
+
+
+
