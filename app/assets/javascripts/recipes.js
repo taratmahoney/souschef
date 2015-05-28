@@ -42,6 +42,8 @@ $(function() {
     read_current_step();
   }
 
+  
+
   $(".next-step").on("click", next_step);
   $(".prev-step").on("click", prev_step);
   $("body").keydown(function(event) {

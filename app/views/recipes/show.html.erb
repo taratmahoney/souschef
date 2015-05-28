@@ -1,33 +1,46 @@
-<h1><%= @recipe.name %></h1>
 <script type="text/javascript" src="https://rawgithub.com/hiddentao/google-tts/master/google-tts.min.js"></script>
-<%= image_tag(@recipe.image, :size => "260x180", :crop => :fill) %>
-<!-- <img class="recipe-image" src="<%= @recipe.image %>" />
--->
-
-<p>Cooking time:</p>
-<p><%= @recipe.time %> hours</p>
-
-<button class="prev-step"> &lt;&lt; Read prev step </button> 
-<button class="next-step"> Read next step &gt;&gt; </button> 
-
-</br>
-<div id="speaker"></div>
 
 
-<p>Ingredients: </p>
+<div class="recipe-image">
+  <%= image_tag(@recipe.image) %>
+</div>
 
-  <% @recipe.ingredients.each do |ingredient| %>
-    <%= ingredient.number %>
-    <%= ingredient.unit %>
-    <%= ingredient.name %></br>
-  <% end %>
+<div class="recipe">
+    <h1><%= @recipe.name %></h1>
 
-<p>Steps:</p>
+    <p>Cooking time: <%= @recipe.time %> hours</p>
 
-<% @recipe.steps.each do |step| %>
-  <p class="step-content" id="step<%= step.number %>">
-   <%= step.content %>
-  </p>
-<% end %>
+    <!-- <button class="read"> Read it! </button> -->
 
-<%= link_to "Edit Recipe", edit_recipe_path %>
+    <button class="prev-step"> &lt;&lt; Read prev step </button> 
+    <button class="next-step"> Read next step &gt;&gt; </button>
+
+    </br>
+    <div id="speaker"></div>
+
+
+    <div class="ingredients">
+      
+      <p>Ingredients: </p>
+
+      <% @recipe.ingredients.each do |ingredient| %>
+        <%= ingredient.number %>
+        <%= ingredient.unit %>
+        <%= ingredient.name %></br>
+      <% end %>
+    </div>
+
+
+    <div class="steps">
+
+      <p>Steps:</p>
+
+        <% @recipe.steps.each do |step| %>
+        <p class="step-content" id="step<%= step.number %>">
+         <%= step.content %>
+        </p>
+      <% end %>
+    </div>
+
+    <%= link_to "Edit Recipe", edit_recipe_path %>
+</div>

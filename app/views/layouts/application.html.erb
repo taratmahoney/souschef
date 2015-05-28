@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href='http://fonts.googleapis.com/css?family=Pacifico|Raleway|Roboto:500,300,300italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Pacifico|Raleway|Roboto:500,300,300italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -18,6 +18,21 @@
 
 <div class="app-container">
     
+
+
+
+  <%= yield %>
+
+  <!-- <% if current_user %>
+      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+      <%= link_to "Logout", :logout, method: :post %>
+    <% else %>
+      <%= link_to "Sign up", new_user_path %> |
+      <%= link_to "Login", :login %>
+    <% end %>
+
+    -->
+</div>
 
   <div class="flash-container">
     <% if flash[:alert] %>
@@ -32,17 +47,6 @@
       </p>
     <% end %>
   </div>
-
-  <%= yield %>
-
-  <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
-</div>
 
 </body>
 </html>

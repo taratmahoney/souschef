@@ -21,3 +21,30 @@
 .recipe-list-name a{
   color: white;
 }
+
+.recipe-list-item {
+   @include media($medium-screen-only) {
+    @include span-columns(4);
+    @include omega(2n);
+   }
+ }
+
+.recipe-list-item {
+  @include media($large-screen-up) {
+  @include span-columns(4);
+  @include omega(3n);
+ }
+}
+
+.recipe-image{  
+ @include media($large-screen-up){
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 390px;
+ }
+}
