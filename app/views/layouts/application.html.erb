@@ -13,36 +13,39 @@
   <nav>
     <ul>
       <li class="logo"> <%= link_to "souschef", root_url %> </li>
-    </ul> 
+
+        <% if current_user %>
+
+         <li class="link"> <%= link_to "Logout", :logout, method: :post %> </li>
+         <li class="link"> <%= link_to "Edit Profile", edit_user_path(current_user.id) %> </li>
+         <li class="link"> <%= link_to "Add Recipe + ", new_recipe_path %> </li>
+        <% else %>
+          <li class="link"> <%= link_to "Sign up", new_user_path %> </li>
+          <li> <%= link_to "Login", :login %> </li>
+        <% end %>
+    </ul>
   </nav>
 
 <div class="app-container">
-    
+
 
 
 
   <%= yield %>
 
-  <!-- <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
 
-    -->
+
 </div>
 
   <div class="flash-container">
     <% if flash[:alert] %>
-      <p id="alert"> 
-        <%=flash[:alert]%> 
+      <p id="alert">
+        <%=flash[:alert]%>
       </p>
     <% end %>
 
     <% if flash[:notice] %>
-      <p id="notice"> 
+      <p id="notice">
         <%=flash[:notice]%>
       </p>
     <% end %>

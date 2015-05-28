@@ -1,21 +1,17 @@
 
 <div class="landing">
 
-  <% if current_user %>
-    <button class="add-recipe"> <%= link_to "Add Recipe", new_recipe_path %> </button>
-  <% end %> 
-
 </div>
 
 
 <div class="recipes">
   <% @recipe.each do |recipe| %>
-    
-    <div class="recipe-list-item"> 
+
+    <div class="recipe-list-item">
       <div class="recipe-list-image">
         <%= image_tag(recipe.image) %>
       </div>
-      
+
       <div class="recipe-list-name">
         <h4><%= link_to recipe.name, "/recipes/#{recipe.id}" %> </h4>
       </div>
