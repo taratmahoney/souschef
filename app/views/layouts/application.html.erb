@@ -25,18 +25,7 @@
         <% end %>
     </ul>
   </nav>
-
-<div class="app-container">
-
-
-
-
-  <%= yield %>
-
-
-
-</div>
-
+  
   <div class="flash-container">
     <% if flash[:alert] %>
       <p id="alert">
@@ -50,6 +39,18 @@
       </p>
     <% end %>
   </div>
+<div class="app-container">
+
+
+
+
+  <%= yield %>
+
+
+
+</div>
+
+  
 
 </body>
 </html>
