@@ -2,6 +2,7 @@
   font-family: $logo-font-family;
   font-size: $medium-font-size;
   color: $blue;
+  display: inline-block;
 }
 
 nav {
@@ -20,3 +21,12 @@ nav {
 button a{
   color: white;
 }
+
+.link {
+  right: 5px;
+  display: inline-block;
+  float: right;
+  padding-right: 10px;
+  line-height: 3;
+}
+
