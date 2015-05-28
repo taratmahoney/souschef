@@ -1,44 +1,56 @@
 <script type="text/javascript" src="https://rawgithub.com/hiddentao/google-tts/master/google-tts.min.js"></script>
 
-<div class="recipe-image-container">
-  <%= image_tag(@recipe.image) %>
+  <div class="recipe-image-container">
+    <%= image_tag(@recipe.image) %>
 
       <div class="image-container-text">
         <h2><%= @recipe.name %></h2>
         <p><%= @recipe.description %></p>
         <p>Cooking time: <%= @recipe.time %> hours</p>
       </div>
-</div>
+  </div>
 
-<button class="prev-step"> &lt;&lt; Read prev step </button>
-    <button class="next-step"> Read next step &gt;&gt; </button>
+  
 
-    <div id="speaker"></div>
 
-<div class="recipe">
 
      <!-- <button class="read"> Read it! </button> -->
 
-    <div class="ingredients">
+    
+  <div class="right-pane">
 
-      <p>Ingredients: </p>
+      <div class="fixed-buttons">
 
-      <% @recipe.ingredients.each do |ingredient| %>
-        <%= pluralize(ingredient.number, ingredient.unit) %>
-        <%= ingredient.name %></br>
-      <% end %></br>
+      <button class="prev-step"> &lt;&lt; Read prev step </button>
+      <button class="next-step"> Read next step &gt;&gt; </button>
+
+      <div id="speaker"></div>
     </div>
 
+    <div class="recipe">
 
-    <div class="steps">
+      <div class="ingredients">
 
-      <p>Directions:</p></br>
-      <% @recipe.steps.each do |step| %>
-        <p class="step-content" id="step<%= step.number %>" data-step="<%= step.number %>">
-          <%= step.content %>
-        </p>
-      <% end %>
+        <p>Ingredients: </p>
+
+        <% @recipe.ingredients.each do |ingredient| %>
+          <%= pluralize(ingredient.number, ingredient.unit) %>
+          <%= ingredient.name %></br>
+        <% end %></br>
+      </div>
+
+
+      <div class="steps">
+
+        <p>Directions:</p></br>
+        <% @recipe.steps.each do |step| %>
+          <p class="step-content" id="step<%= step.number %>" data-step="<%= step.number %>">
+            <%= step.content %>
+          </p>
+        <% end %>
+      </div>
     </div>
+      <%= link_to "Edit Recipe", edit_recipe_path %>
+  </div>
 
-    <%= link_to "Edit Recipe", edit_recipe_path %>
-</div>
+
