@@ -60,7 +60,6 @@
 .recipe-image-container img{  
  @include media($large-screen-up){
   overflow: hidden;
-  height: 500px;
   }
 }
 
