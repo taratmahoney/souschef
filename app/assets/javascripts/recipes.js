@@ -12,29 +12,24 @@ String.prototype.repeat = function( num )
  // find the next step's p tag
  // highlight current step
 
-$(function() {
+$(document).on('ready page:load', function() {
   var current_step = 1;
 
   var read_current_step = function () {
-    var step = $("#step" + current_step).text();
-    var highlight = function (){
-      $(".step-content").css("background-color", "yellow");
-    }
-    var unhighlight = function (){
-      $(".step-content").css("background-color", "transparent");
-    }
+    var step = $("#step" + current_step);
+
     // read the step
-    unhighlight;
-    highlight;
-    speak(step);
-    
+    $('.step-content').removeClass('highlight');
+    step.addClass('highlight');
+    speak(step.text());
+
     console.log("I'm reading a step!")
   }
 
 
   var next_step = function(){
-    current_step++;
     read_current_step();
+    current_step++;
   }
 
   var prev_step = function(){
@@ -44,6 +39,7 @@ $(function() {
 
   $(".next-step").on("click", next_step);
   $(".prev-step").on("click", prev_step);
+
   $("body").keydown(function(event) {
     switch(event.keyCode) {
       case 37: // 'Left'
@@ -57,7 +53,7 @@ $(function() {
         next_step()
         break
     }
-    
+
   });
 
 });

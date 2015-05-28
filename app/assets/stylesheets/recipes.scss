@@ -36,7 +36,7 @@
  }
 }
 
-.recipe-image-container{  
+.recipe-image-container{
  @include media($large-screen-up){
   float: left;
   display: block;
@@ -47,23 +47,23 @@
   height: 100%;
   background-color: $blue;
   color: white;
-  width: 45%; 
+  width: 45%;
   }
 }
 
-  .image-container-text {
-    @include media($large-screen-up){
+.image-container-text {
+  @include media($large-screen-up){
     padding: 2em;
-    }
   }
+}
 
-.recipe-image-container img{  
+.recipe-image-container img{
  @include media($large-screen-up){
   overflow: hidden;
   }
 }
 
- .recipe {  
+ .recipe {
  @include media($large-screen-up){
   width: 55%;
   float: right;
@@ -73,4 +73,8 @@
 
 .recipe {
   padding: 1em 3em;
+}
+
+.highlight {
+  background-color: yellow;
 }
