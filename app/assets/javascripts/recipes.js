@@ -15,10 +15,17 @@ String.prototype.repeat = function( num )
 $(document).on('ready page:load', function() {
   var current_step = 1;
 
+  var read_ingredients = function() {
+    var ingredients = $(".ingredients");
+    speak(ingredients.text());
+  }
+
+
   var read_current_step = function () {
     var step = $("#step" + current_step);
 
     // read the step
+
     $('.step-content').removeClass('highlight');
     step.addClass('highlight');
     speak(step.text());
@@ -37,6 +44,7 @@ $(document).on('ready page:load', function() {
     read_current_step();
   }
 
+  $(".ingredients-list").on("click", read_ingredients);
   $(".next-step").on("click", next_step);
   $(".prev-step").on("click", prev_step);
 
