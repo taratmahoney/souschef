@@ -24,6 +24,6 @@ descriptions = ['The sweet-tart mango is enhanced by the pinch of salt, while th
  end
 
   (1..10).each do |num|
-    recipe.steps.create(number: num, content: directions.sample)
+    recipe.steps.create(content: directions.sample)
   end
 end

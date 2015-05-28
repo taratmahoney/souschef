@@ -34,7 +34,7 @@
 
       <p>Directions:</p></br>
       <% @recipe.steps.each do |step| %>
-        <p class="step-content" id="step<%= step.number %>" data-step="<%= step.number %>">
+        <p class="step-content" id="step<%= step.position %>" >
           <%= step.content %>
         </p>
       <% end %>
