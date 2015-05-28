@@ -33,8 +33,8 @@ $(document).on('ready page:load', function() {
   }
 
   var prev_step = function(){
-    current_step--;
     read_current_step();
+    current_step--;
   }
 
   $(".next-step").on("click", next_step);
