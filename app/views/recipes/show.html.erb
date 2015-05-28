@@ -2,15 +2,18 @@
 
 <div class="recipe-image-container">
   <%= image_tag(@recipe.image) %>
-      
+
       <div class="image-container-text">
         <h2><%= @recipe.name %></h2>
+        <p><%= @recipe.description %></p>
         <p>Cooking time: <%= @recipe.time %> hours</p>
       </div>
 </div>
 
 <div class="recipe">
+
      <!-- <button class="read"> Read it! </button> -->
+
     <button class="prev-step"> &lt;&lt; Read prev step </button>
     <button class="next-step"> Read next step &gt;&gt; </button>
 
@@ -18,8 +21,9 @@
 
 
     <div class="ingredients">
-      
-      <h4>Ingredients: </h4>         
+
+      <p>Ingredients: </p>
+
         <% @recipe.ingredients.each do |ingredient| %>
           <%= pluralize(ingredient.number, ingredient.unit) %>
           <%= ingredient.name %></br>
