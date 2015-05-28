@@ -9,11 +9,13 @@
 <div class="recipe">
     <h1><%= @recipe.name %></h1>
 
+    <p><%= @recipe.description %></p>
+
     <p>Cooking time: <%= @recipe.time %> hours</p>
 
     <!-- <button class="read"> Read it! </button> -->
 
-    <button class="prev-step"> &lt;&lt; Read prev step </button> 
+    <button class="prev-step"> &lt;&lt; Read prev step </button>
     <button class="next-step"> Read next step &gt;&gt; </button>
 
     </br>
@@ -21,8 +23,8 @@
 
 
     <div class="ingredients">
-      
-      <p>Ingredients: </p>         
+
+      <p>Ingredients: </p>
         <% @recipe.ingredients.each do |ingredient| %>
           <%= pluralize(ingredient.number, ingredient.unit) %>
           <%= ingredient.name %></br>
