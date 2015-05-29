@@ -22,20 +22,63 @@ button a{
   color: white;
 }
 
-#hamburger {
+.side-menu {
+  display: inline-block;
+}
+
+#nav-toggle {
   display: inline-block;
 }
 .ham-layer {
   background-color: $blue;
   height: 3px;
-  width: 10px;
+  width: 20px;
   margin: 3px;
+  transition: all 0.2s $ease-out-back;
 }
 
+.side-menu
 .link {
   right: 5px;
   padding-right: 25px;
   line-height: 3;
+}
+
+#1 {
+  top: -25px;
+}
+
+#3{
+  bottom: -25px;
+  transform-origin: 50% 50%;
+}
+
+#nav-toggle.is-open #2 {
+  height: 0;
+}
+
+#nav-toggle.is-open #1  {
+  top: 0;
+  transform: rotateZ(45deg);
+}
+
+#nav-toggle.is-open #3 {
+  top: 0;
+  transform: rotateZ(-45deg);
+}
+
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 25%;
+  top: 0;
+  left: -25%;
+  background-color: white;
+  transition: left 0.2s $ease-out-sine;
+
+  &.is-open {
+    left: 0;
+  }
 }
 
 .links {
@@ -43,7 +86,24 @@ button a{
 }
 
 .flash-container {
-  padding: 1em;
+  padding: 0em 1em;
   
+}
+
+.landing h1 span {
+  font-family: $logo-font-family;
+}
+
+.landing{
+  background: url('https://download.unsplash.com/reserve/oMRKkMc4RSq7N91OZl0O_IMG_8309.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    padding: 37% 5% 15% 5%;
+  color: white;
+  text-shadow: 1px 2px black;
+  font-weight: bold;
+
 }
 
