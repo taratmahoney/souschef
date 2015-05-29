@@ -23,16 +23,20 @@
           </a>
           </div>
           
-          <ul class="links">
-            <% if current_user %>
+          <ul class="sidebar">
 
-             <li class="link"> <%= link_to "Logout", :logout, method: :post %> </li>
-             <li class="link"> <%= link_to "Edit Profile", edit_user_path(current_user.id) %> </li>
-             <li class="link"> <%= link_to "+ Add Recipe", new_recipe_path %> </li>
+            <li class="link"><%= link_to "Home", root_url %></li>
+
+            <% if current_user %>
+              <li class="link"> <%= link_to "+ Add Recipe", new_recipe_path %> </li>
+              <li class="link"> <%= link_to "Logout", :logout, method: :post %> </li>
+              <li class="link"> <%= link_to "Edit Profile", edit_user_path(current_user.id) %> </li>
+             
             <% else %>
               <li class="link"> <%= link_to "Sign up", new_user_path %> </li>
               <li class="link"> <%= link_to "Login", :login %> </li>
             <% end %>
+
           </ul>
       </div>
     

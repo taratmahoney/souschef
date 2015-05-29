@@ -1,9 +1,7 @@
 .logo {
   font-family: $logo-font-family;
-  font-size: $medium-font-size;
+  font-size: $large-font-size;
   color: $blue;
-  display: inline-block;
-  width: 90%;
   text-align: center;
 }
 
@@ -12,7 +10,7 @@ nav {
   padding: 1em;
   position: fixed;
   width: 100%;
-  height: 73px;
+  height: 88px;
   z-index: 100;
 }
 
@@ -25,12 +23,15 @@ button a{
 }
 
 .side-menu {
-  display: inline-block;
+  display: block;
 }
 
-#nav-toggle {
-  display: inline-block;
+#nav-toggle a{
+   position: absolute;
+  top: 37px;
+  right: 40px;
 }
+
 .ham-layer {
   background-color: $blue;
   height: 3px;
@@ -39,53 +40,39 @@ button a{
   transition: all 0.2s $ease-out-back;
 }
 
+
 .side-menu
 .link {
   right: 5px;
   padding-right: 25px;
   line-height: 3;
 }
-
-#1 {
-  top: -25px;
+.rotate-left{
+  top: 0;
+  transform: rotateZ(40deg);
 }
-
-#3{
-  bottom: -25px;
+.rotate-right{
+  top: 0;
+  transform: rotateZ(-40deg);
   transform-origin: 50% 50%;
 }
 
-#nav-toggle.is-open #2 {
-  height: 0;
-}
-
-#nav-toggle.is-open #1  {
-  top: 0;
-  transform: rotateZ(45deg);
-}
-
-#nav-toggle.is-open #3 {
-  top: 0;
-  transform: rotateZ(-45deg);
-}
-
-.side-menu {
+.sidebar {
   position: fixed;
   height: 100%;
   width: 25%;
   top: 0;
   left: -25%;
+  padding-left:20px;
   background-color: white;
   transition: left 0.2s $ease-out-sine;
 
   &.is-open {
     left: 0;
+    background-color: rgba(241, 248, 255, 0.78);
   }
 }
 
-.links {
-  display: none;
-}
 
 .flash-container {
   padding: 0em 1em;
