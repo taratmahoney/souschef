@@ -24,9 +24,9 @@ class RecipesController < ApplicationController
       else
         sentence
       end
-    end.flatten # to account for the arrays of split sentences if the 
+    end.flatten # to account for the arrays of split sentences if the
                 # first condition is met
-    
+
     mp3 = sentences.map{ |sentence| generate_mp3(sentence) }.join
 
     send_data mp3
@@ -36,7 +36,7 @@ class RecipesController < ApplicationController
     text = CGI.escape(sentence)
     cmdline = [
       "curl",
-      "http://translate.google.com/translate_tts?tl=en-uk&q=#{text}", 
+      "http://translate.google.com/translate_tts?tl=en-uk&q=#{text}",
       "-e", "http://translate.google.com/",
       "-A", "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
     ]
@@ -71,7 +71,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :image, :time, ingredients_attributes: [:id, :name, :unit, :number, :_destroy], steps_attributes: [:id, :order_number, :content, :_destroy])
+    params.require(:recipe).permit(:name, :description, :image, :time, :time_units, ingredients_attributes: [:id, :name, :unit, :number, :_destroy], steps_attributes: [:id, :order_number, :content, :_destroy])
   end
 
 end
