@@ -78,5 +78,29 @@ select {
 }
 
 .form {
-  margin: 0% 10%;
+  margin: 5%;
+  color: white;
+  padding: 10%;
+  background-color: $blue;
+}
+
+.form input[type="submit"]{
+  color: $blue;
+  background: $yellow;
+  margin-top: 20px;
+ 
+ &:hover,
+  &:focus {
+    background-color: lighten($yellow, 15%);
+  }
+}
+
+.form a{
+  color: white;
+}
+.form h4 {
+  text-transform: uppercase;
+}
+#steps, #ingredients{
+  padding-top: 20px;
 }

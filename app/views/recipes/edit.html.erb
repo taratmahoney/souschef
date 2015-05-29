@@ -1,6 +1,7 @@
-<h1>Edit Recipe</h1>
+
 
 <div class="form">
+<h4>Edit Recipe</h4>
 <%= form_for @recipe do |f| %>
   <div>
     <%= f.label :name %>
@@ -19,13 +20,14 @@
   </div>
 
   <div>
-    <%= f.label :image %>
+    <%= f.label :image, "Image URL" %>
     <%= f.text_field :image %>
   </div>
 
-  <h3>Ingredients</h3>
+  
 
   <div id="ingredients">
+  <h4>Ingredients</h4>
     <%= f.fields_for :ingredients do |ingredients_form| %>
       <%= render 'ingredient_fields', f: ingredients_form %>
     <% end %>
@@ -35,9 +37,10 @@
     </div>
   </div>
 
-  <h3>Steps</h3>
+  
 
   <div id="steps">
+  <h4>Steps</h4>
     <%= f.fields_for :steps do |steps_form| %>
       <%= render 'step_fields', f: steps_form %>
     <% end %>

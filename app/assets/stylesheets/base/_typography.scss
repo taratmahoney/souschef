@@ -24,6 +24,11 @@ h2, h3{
   font-size: $medium-font-size
 }
 
+h4{
+  font-size: $small-title-font-size;
+  
+}
+
 p {
   margin: 0 0 $small-spacing;
   font-weight: 300;
