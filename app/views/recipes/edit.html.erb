@@ -29,7 +29,7 @@
       <%= render 'ingredient_fields', f: ingredients_form %>
     <% end %>
 
-    <div class="links">
+    <div class="add-ingredient">
       <%= link_to_add_association 'add ingredient', f, :ingredients %>
     </div>
   </div>
@@ -41,7 +41,7 @@
       <%= render 'step_fields', f: steps_form %>
     <% end %>
 
-    <div class="links">
+    <div class="add-step">
       <%= link_to_add_association 'add step', f, :steps %>
     </div>
   </div>

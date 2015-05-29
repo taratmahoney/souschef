@@ -16,10 +16,14 @@
       <div class="fixed-buttons">
 
       <button class="read"> Read it! </button>
-      
+
       <div class="step-buttons">
-        <button class="prev-step"> &lt;&lt; Read prev step </button> 
+        <button class="prev-step"> &lt;&lt; Read prev step </button>
         <button class="next-step"> Read next step &gt;&gt; </button>
+      </div>
+
+      <div class="button-instructions">
+        <p>Right and left arrow keys can be used to move between steps</p>
       </div>
 
       <div id="speaker"></div>
@@ -47,9 +51,11 @@
         </p>
       <% end %>
 
-    </div>
+
 
       <%= link_to "Edit Recipe", edit_recipe_path %>
+
+   </div>
   </div>
 
 
