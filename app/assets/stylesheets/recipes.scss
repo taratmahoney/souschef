@@ -115,3 +115,18 @@
 .button-instructions p{
  font-weight: 400;
 }
+
+.ingredient-field {
+  @include media($medium-screen-up){
+  display: inline-block;
+  padding: 10px;
+  width: 30%;
+  vertical-align: bottom;
+}
+}
+
+.fields {
+  padding-top: 20px;
+}
+
+
