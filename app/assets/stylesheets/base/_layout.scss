@@ -22,11 +22,28 @@ button a{
   color: white;
 }
 
+#hamburger {
+  display: inline-block;
+}
+.ham-layer {
+  background-color: $blue;
+  height: 3px;
+  width: 10px;
+  margin: 3px;
+}
+
 .link {
   right: 5px;
-  display: inline-block;
-  float: right;
   padding-right: 25px;
   line-height: 3;
+}
+
+.links {
+  display: none;
+}
+
+.flash-container {
+  padding: 1em;
+  
 }
 

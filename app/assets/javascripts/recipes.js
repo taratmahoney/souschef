@@ -41,10 +41,16 @@ $(document).on('ready page:load', function() {
 
   var prev_step = function(){
     current_step--;
-    read_current_step();
+      read_current_step();
   }
 
-  $(".ingredients-list").on("click", read_ingredients);
+ var show_buttons = function(){
+    $(".read").css("display", "none");
+    $(".step-buttons").css("display", "inline");
+  }
+
+  $(".read").on("click", read_ingredients);
+  $(".read").on("click", show_buttons)
   $(".next-step").on("click", next_step);
   $(".prev-step").on("click", prev_step);
 
@@ -64,6 +70,8 @@ $(document).on('ready page:load', function() {
 
   });
 
-});
+});    
 
-// http://translate.google.com/translate_tts?tl=en&q="<%= step.content %>"'type='audio/mpeg'
+
+
+
