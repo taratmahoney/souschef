@@ -3,6 +3,8 @@
   font-size: $medium-font-size;
   color: $blue;
   display: inline-block;
+  width: 90%;
+  text-align: center;
 }
 
 nav {
@@ -67,7 +69,7 @@ button a{
   transform: rotateZ(-45deg);
 }
 
-.sidebar {
+.side-menu {
   position: fixed;
   height: 100%;
   width: 25%;
@@ -90,7 +92,13 @@ button a{
   
 }
 
-.landing h1 span {
+
+.landing h3 {
+  @include media($medium-screen-up){
+    font-size: $large-font-size;
+  }
+}
+.landing h3 span {
   font-family: $logo-font-family;
 }
 
@@ -100,10 +108,9 @@ button a{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-    padding: 37% 5% 15% 5%;
+    padding: 24% 10% 15% 10%;
   color: white;
   text-shadow: 1px 2px black;
   font-weight: bold;
-
 }
 

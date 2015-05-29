@@ -14,7 +14,7 @@
 
 .recipe-list-name {
   position: absolute;
-  bottom: 10px;
+  bottom: 7px;
   background-color: rgba(121, 177, 237, 0.6);
   display: block;
   width: 100%;
@@ -22,6 +22,12 @@
   padding-top: 10px;
   font-size: 1.5em;
   color: #FFFF66;
+
+    &:hover,
+  &:focus {
+    background-color: darken($action-color, 15%);
+    color: #fff;
+  }
 }
 
 .recipe-list-name a{
@@ -75,7 +81,7 @@
 }
 
 .recipe {
-  padding: 20px 10px 130px 20px;
+  padding: 20px 10px 160px 20px;
 }
 
 .highlight {
@@ -85,18 +91,25 @@
 .fixed-buttons{
   position: fixed;
   bottom: 0;
-  background: $yellow;
+  background: rgba(105, 105, 99, 1);
   width: 100%;
   z-index: 15;
   padding: 1em 1em;
 }
 
+.read {
+  width: 40%;
+  text-transform: uppercase;
+  background-color: $yellow;
+  color: $blue;
+}
 #speaker {
   padding: 10px;
 }
 
 .step-buttons{
   display: none;
+  text-transform: uppercase;
 
 }
 
@@ -109,3 +122,18 @@
 .button-instructions p{
  font-weight: 400;
 }
+
+.ingredient-field {
+  @include media($medium-screen-up){
+  display: inline-block;
+  padding: 10px;
+  width: 30%;
+  vertical-align: bottom;
+}
+}
+
+.fields {
+  padding-top: 20px;
+}
+
+

@@ -1,18 +1,24 @@
 <div class="nested-fields">
-  <div>
+
+<div class="fields">
+  <div class="ingredient-field">
     <%= f.label :name %>
+    <p> What's it called? (E.g. cumin, rice, pasta, red pepper) </p>
     <%= f.text_field :name %>
   </div>
 
-  <div>
-    <%= f.label :unit %>
-    <%= f.text_field :unit %>
+  <div class="ingredient-field">
+    <%= f.label :number %>
+    <p> How much of it will people cooking your recipe need? (E.g. 1, 2, 3...) </p>
+    <%= f.number_field :number %>
   </div>
 
-  <div>
-    <%= f.label :number %>
-    <%= f.text_field :number %>
+  <div class="ingredient-field">
+    <%= f.label :unit %>
+    <p> In what units (mL, L, mg, g, tablespoons, cups, etc)?  </p>
+    <%= f.text_field :unit %>
   </div>
+</div>
 
   <%= link_to_remove_association "- remove ingredient", f %>
 </div>

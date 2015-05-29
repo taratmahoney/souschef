@@ -2,26 +2,31 @@
 
 <div class="form">
 <h4>Add a Recipe</h4>
+<p> Put in your recipe description, steps, and ingredients, and souschef will read it out to you! </p>
+
 <%= form_for @recipe do |f| %>
-  <div>
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
-  <div>
+  <div class-"field">
     <%= f.label :description %>
+    <p> What is this? </p>
     <%= f.text_area :description %>
   </div>
 
-  <div>
+  <div class="field" id="time">
     <%= f.label :time %>
+    <p> About how long will this take? </p>
     <%= f.text_field :time %>
     <%= f.label :time_units %>
     <%= f.select(:time_units, options_for_select([['minutes', 'minutes'], ['hours', 'hours']])) %>
   </div>
 
-  <div>
+  <div class="field">
     <%= f.label :image, "Image URL" %>
+    <p> What does it look like? </p>
     <%= f.text_field :image %>
   </div>
 

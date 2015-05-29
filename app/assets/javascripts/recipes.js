@@ -1,6 +1,6 @@
 function speak(text) {
   // var url = "http://translate.google.com/translate_tts?tl=en&q=" + encodeURIComponent(text);
-  var url = "/recipes/tts?speak=" + encodeURIComponent(text);
+  var url = "/recipes/tts?speak=" + encodeURIComponent($.trim(text)).replace(/'/g, "%27");
   $("#speaker").html("<audio controls autoplay><source src='"+url+"' type='audio/mpeg'></audio>")
 }
 
@@ -43,8 +43,9 @@ $(document).on('ready page:load', function() {
   var prev_step = function(){
       if (current_step == 1){
         read_ingredients();
+        $('.step-content').removeClass('highlight');
       } else{
-        current_step--;
+      current_step--;
       read_current_step();
       }
   }
