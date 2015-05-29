@@ -17,6 +17,7 @@ class RecipesController < ApplicationController
   # /recipes/tts?speak=hello
   def tts
     sentences = params[:speak].split(".").map do |sentence|
+      # binding.pry
       if sentence.length > 100
         words = sentence.split(" ")
         left,right = words.each_slice( (words.size/2.0).round ).to_a

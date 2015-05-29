@@ -3,6 +3,8 @@
   font-size: $medium-font-size;
   color: $blue;
   display: inline-block;
+  width: 90%;
+  text-align: center;
 }
 
 nav {
@@ -67,7 +69,7 @@ button a{
   transform: rotateZ(-45deg);
 }
 
-.sidebar {
+.side-menu {
   position: fixed;
   height: 100%;
   width: 25%;
