@@ -79,7 +79,7 @@ select {
 
 .form {
   margin: 0% 5%;
-  padding: 5% 10%;
+  padding: 5% 10%;  
   background-color: $blue;
 }
 
@@ -94,7 +94,7 @@ select {
   }
 }
 
-.form label, h4 {
+.form label, h4{
   color: white;
 }
 
@@ -103,6 +103,10 @@ select {
 }
 .form h4 {
   text-transform: uppercase;
+}
+
+.form p{
+  color: white;
 }
 #steps, #ingredients{
   padding-top: 20px;
