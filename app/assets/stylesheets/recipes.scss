@@ -14,7 +14,7 @@
 
 .recipe-list-name {
   position: absolute;
-  bottom: 10px;
+  bottom: 7px;
   background-color: rgba(121, 177, 237, 0.6);
   display: block;
   width: 100%;
@@ -91,18 +91,25 @@
 .fixed-buttons{
   position: fixed;
   bottom: 0;
-  background: $yellow;
+  background: rgba(105, 105, 99, 1);
   width: 100%;
   z-index: 15;
   padding: 1em 1em;
 }
 
+.read {
+  width: 40%;
+  text-transform: uppercase;
+  background-color: $yellow;
+  color: $blue;
+}
 #speaker {
   padding: 10px;
 }
 
 .step-buttons{
   display: none;
+  text-transform: uppercase;
 
 }
 
