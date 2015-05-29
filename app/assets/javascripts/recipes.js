@@ -17,6 +17,7 @@ $(document).on('ready page:load', function() {
 
   var read_ingredients = function() {
     var ingredients = $(".ingredients");
+    ingredients.addClass('highlight');
     speak(ingredients.text());
   }
 
@@ -26,7 +27,7 @@ $(document).on('ready page:load', function() {
 
     // read the step
 
-    $('.step-content').removeClass('highlight');
+    $('.step-content, .ingredients').removeClass('highlight');
     step.addClass('highlight');
     speak(step.text());
 
@@ -40,8 +41,12 @@ $(document).on('ready page:load', function() {
   }
 
   var prev_step = function(){
-    current_step--;
+      if (current_step == 1){
+        read_ingredients();
+      } else{
+        current_step--;
       read_current_step();
+      }
   }
 
  var show_buttons = function(){
