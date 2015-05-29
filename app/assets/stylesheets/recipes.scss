@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.recipes { 
+.recipes {
   @include media($medium-screen-up){
     margin: 1em 3em;
   }
@@ -75,7 +75,7 @@
 }
 
 .recipe {
-  padding: 20px 10px 100px 20px;
+  padding: 20px 10px 130px 20px;
 }
 
 .highlight {
@@ -100,3 +100,12 @@
 
 }
 
+.button-instructions{
+  color: #79B1ED;
+  font-size: 10px;
+
+}
+
+.button-instructions p{
+ font-weight: 400;
+}
