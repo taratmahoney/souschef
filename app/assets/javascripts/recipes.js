@@ -4,11 +4,6 @@ function speak(text) {
   $("#speaker").html("<audio controls autoplay><source src='"+url+"' type='audio/mpeg'></audio>")
 }
 
-String.prototype.repeat = function( num )
-{
-    return new Array( num + 1 ).join( this );
-}
-
  // find the next step's p tag
  // highlight current step
 
@@ -76,7 +71,7 @@ $(document).on('ready page:load', function() {
 
   });
 
-});    
+});
 
 
 

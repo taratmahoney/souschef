@@ -7,13 +7,14 @@ class User < ActiveRecord::Base
 
   has_many :favorites
   has_many :recipes, through: :favorites
+  has_many :recipes
 
 
   def display_name
     if first_name
      return "#{first_name} #{last_name}"
    else
-    return email 
+    return email
     end
   end
 end
