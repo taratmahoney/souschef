@@ -79,7 +79,6 @@ select {
 
 .form {
   margin: 5%;
-  color: white;
   padding: 10%;
   background-color: $blue;
 }
@@ -88,11 +87,15 @@ select {
   color: $blue;
   background: $yellow;
   margin-top: 20px;
- 
+
  &:hover,
   &:focus {
     background-color: lighten($yellow, 15%);
   }
+}
+
+.form label, h4 {
+  color: white;
 }
 
 .form a{
