@@ -22,6 +22,12 @@
   padding-top: 10px;
   font-size: 1.5em;
   color: #FFFF66;
+
+    &:hover,
+  &:focus {
+    background-color: darken($action-color, 15%);
+    color: #fff;
+  }
 }
 
 .recipe-list-name a{

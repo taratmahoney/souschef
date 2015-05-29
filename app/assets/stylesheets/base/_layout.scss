@@ -90,7 +90,13 @@ button a{
   
 }
 
-.landing h1 span {
+
+.landing h3 {
+  @include media($medium-screen-up){
+    font-size: $large-font-size;
+  }
+}
+.landing h3 span {
   font-family: $logo-font-family;
 }
 
@@ -104,6 +110,5 @@ button a{
   color: white;
   text-shadow: 1px 2px black;
   font-weight: bold;
-
 }
 
