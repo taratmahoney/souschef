@@ -70,6 +70,12 @@ class RecipesController < ApplicationController
     end
   end
 
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to root_url, notice: "Your recipe was deleted."
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(:name, :description, :image, :time, :time_units, ingredients_attributes: [:id, :name, :unit, :number, :_destroy], steps_attributes: [:id, :order_number, :content, :_destroy])
