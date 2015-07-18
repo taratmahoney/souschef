@@ -4,6 +4,6 @@ class Recipe < ActiveRecord::Base
   has_many :favorites
   has_many :users, through: :favorites
   belongs_to :users
-  accepts_nested_attributes_for :ingredients
-  accepts_nested_attributes_for :steps
+  accepts_nested_attributes_for :ingredients, allow_destroy: true
+  accepts_nested_attributes_for :steps, allow_destroy: true
 end
